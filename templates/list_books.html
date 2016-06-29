@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+  <ul class="entries">
+  {% for book in books %}
+    <li><h3><a href="/{{book}}">{{ book }}</a></h3>
+  {% else %}
+    <li><em>Unbelievable. No books!</em>
+  {% endfor %}
+  </ul>
+{% endblock %}
