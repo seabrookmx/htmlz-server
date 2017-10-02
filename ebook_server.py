@@ -32,7 +32,12 @@ def teardown(exception):
 @app.route('/')
 def list_books() -> object:
     books = get_repo().list_books()
-    return render_template('list_books.html', books=books)
+
+    base_path = request.headers.get('X-Request-Uri')
+    if base_path is None:
+        base_path = ''
+
+    return render_template('list_books.html', books=books, base_path=base_path)
 
 
 @app.route('/<name>')

@@ -2,7 +2,7 @@
 {% block body %}
   <ul class="entries">
   {% for book in books %}
-    <li><h3><a href="/{{book}}">{{ book }}</a></h3>
+    <li><h3><a href="{{base_path}}/{{book}}">{{ book }}</a></h3>
   {% else %}
     <li><em>Unbelievable. No books!</em>
   {% endfor %}
