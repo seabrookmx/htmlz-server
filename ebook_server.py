@@ -74,4 +74,6 @@ def create_file_response(path: str) -> object:
 
 
 if __name__ == '__main__':
+    # This code path should run for development only.
+    # gevent_srv.py should be used in a production environment
     app.run(debug=True, threaded=True, host='0.0.0.0')
